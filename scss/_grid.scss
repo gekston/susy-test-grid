@@ -1,0 +1,17 @@
+@import "../bower_components/susy/sass/susy";
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+.container {}
+.row {}
+.col {}
+.sm12 {
+  @include span(12);
+}
+.md6 {
+  @include span(6);
+}
