@@ -6,12 +6,52 @@ $susy: (
   output: float,
   gutter-position: inside,
 );
-.container {}
-.row {}
+$phone: 375px;
+$tab: 768px;
+$full: 1920px;
+.container {
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto
+}
+.row {
+  margin-right:-15px;
+  margin-left:-15px;
+  ::after {
+    clear:both
+  }
+  :after,:before {
+    display:table;
+    content:" "
+  }
+}
 .col {}
+@media (min-width: $phone) {
+  .container {width: 100%}
+  .sm6 {}
+  .sm12 {
+    background-color: red;
+  }
+}
+@media (min-width: $tab) {
+  .container {width:750px}
+  .md6 {
+    background-color: blue;
+  }
+}
+@media (min-width: $full) {
+  .container {width:1170px}
+  .lg6 {
+    background-color: green;
+  }
+}
 .sm12 {
   @include span(12);
 }
 .md6 {
+  @include span(6);
+}
+.lg6 {
   @include span(6);
 }
